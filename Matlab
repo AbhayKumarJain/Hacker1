@@ -1,0 +1,15 @@
+%gamma correction of any image in matlab
+clc;
+clear all;
+close all;
+%-----image read-----%
+fig1=imread("fig1.PNG");
+fig2=imread("fig2.jpg");
+%-----gaama correction-->fig1-----%
+for i=0.1*10:0.9*10
+J = imadjust (fig1,[],[],i/10);%suitable values for gamma is 0.4 &0.5
+subplot(4,4,i);
+imshowpair(fig1,J,'montage');
+xlabel(i/10);
+sgtitle("gamma correction fig1");
+end
